@@ -14,24 +14,27 @@ body {
     background: #6d6a6aa2;
     font-family: 'Arial', sans-serif;
 }
-
+#ans {
+    width: 100%;
+}
 .main {
+    overflow: auto;
     border: 2px solid #eee;
     border-radius: 10px;
     min-width: 250px;
     height: fit-content;
     width: 80vw;
     padding: 20px;
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
 }
-.btn * {
+.btn button {
+    border: 2px solid #3f2e2e;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     margin: 5px;
     border-radius: 5px;
     font-size: 1.5rem;
-    border: none;
 }
 .main .disp #display {
     width: 100%;
@@ -43,11 +46,22 @@ body {
     text-align: right;
     overflow: auto;
 }
+.up {
+    width: 100%;
+}
 .left {
+    width: 100%;
 }
 @media only screen and (min-width: 550px) {
     .main {
+        width: 450px;
         height: 500px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .main {
+        width: 95vw;
+        height: fit-content;
     }
 }
 @media only screen and (orientation: landscape) and (max-width: 750px) and  (max-height: 300px) {

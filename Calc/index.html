@@ -8,7 +8,6 @@
     <link rel="icon" type="image/png" href="calc.png"/>
 </head>
 <body>
-    <h1>Calc</h1>
     <div class="main">
         <div class="disp">
             <input placeholder="0" type="text" id="display" disabled>
@@ -32,15 +31,15 @@
             <button onclick="inp(8)">8</button>
             <button onclick="inp(9)">9</button>
             <button onclick="inp(0)">0</button>
+            <button onclick="inp('.')">.</button>
             </div>
             <div class="left">
             <button onclick="inp('x')">x</button>
             <button onclick="inp('÷')">÷</button>
             <button onclick="inp('-')">-</button>
-            <button onclick="inp('.')">.</button>
             <button onclick="inp('+')">+</button>
             </div>
-            <button onclick="evalute()">=</button>
+            <button id="ans" onclick="evalute()">=</button>
         </div>
     </div>
     <script>
