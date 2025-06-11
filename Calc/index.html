@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/png" href="calc.png"/>
+</head>
+<body>
+    <h1>Calc</h1>
+    <div class="main">
+        <div class="disp">
+            <input placeholder="0" type="text" id="display" disabled>
+            <hr style="width: 100%; margin: 15px 0px 15px;"/>
+        </div>
+        <div class="btn">
+            <div class="up">
+            <button onclick="inp('(')">(</button>
+            <button onclick="inp(')')">)</button>
+            <button onclick="inp('%')">%</button>
+            <button onclick="clear()">AC</button>
+            </div>
+            <div class="numpad">
+            <button onclick="inp(1)">1</button>
+            <button onclick="inp(2)">2</button>
+            <button onclick="inp(3)">3</button>
+            <button onclick="inp(4)">4</button>
+            <button onclick="inp(5)">5</button>
+            <button onclick="inp(6)">6</button>
+            <button onclick="inp(7)">7</button>
+            <button onclick="inp(8)">8</button>
+            <button onclick="inp(9)">9</button>
+            <button onclick="inp(0)">0</button>
+            </div>
+            <div class="left">
+            <button onclick="inp('x')">x</button>
+            <button onclick="inp('÷')">÷</button>
+            <button onclick="inp('-')">-</button>
+            <button onclick="inp('.')">.</button>
+            <button onclick="inp('+')">+</button>
+            </div>
+            <button onclick="evalute()">=</button>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementById("display");
+        function inp(value) {
+            display.value += value;
+        }
+        function evalute(){
+            alert(eval(display.value.replace(/x/g, '*').replace(/÷/g, '/')));
+        }
+    </script>
+</body>
+</html>
