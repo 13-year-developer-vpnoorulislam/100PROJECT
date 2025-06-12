@@ -50,7 +50,12 @@
         let isAnswerVisible = false;
         function evalute(){
             answer.style.display = 'none';
-            display.value = eval(display.value.replace(/x/g, '*').replace(/÷/g, '/'));
+            try {
+            display.value = eval(display.value.replace(/x/g, '*').replace(/÷/g, '/'));                
+            } catch (error) {
+                alert("Invalid Expression");
+                display.value = '';
+            }
             isAnswerVisible = true;
         }
         function inp(value) {
@@ -73,6 +78,21 @@
                 answer.innerText = `Ans: ${(eval(display.value.replace(/x/g, '*').replace(/÷/g, '/')))}`;
             }
         }
+        window.addEventListener('keydown' , function numpad(event) {
+            if (event.keyCode >= 48 && event.keyCode <= 57 ) {
+                inp(event.key);
+            } else if ( event.keyCode >= 96 && event.keyCode <= 105){
+                inp(event.key);
+            } else if (event.key === 'x' || event.key === '÷' || event.key === '-' || event.key === '+' || event.key === '.' || event.key === '%') {
+                inp(event.key);
+            } else if (event.key === 'Enter') {
+                evalute();
+            } else if (event.key === 'Backspace') {
+                ce();
+            } else if (event.key === 'Escape') {
+                ac();
+            }
+        });
     </script>
 </body>
 </html>
