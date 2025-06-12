@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timer</title>
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css"/>
+<link href="https://fonts.cdnfonts.com/css/digital-dismay" rel="stylesheet">
 </head>
 <body>
-    
+     <p id="timer">asdf</p>
+     <script>
+
+        let am_pm , rail_normal;
+        let timerElement = document.getElementById('timer');
+            function updateTimer() {
+                const now = new Date();
+                let hours = now.getHours();
+                 if (hours > 12) {
+                    hours -= 12; // Convert to 12-hour format
+                    am_pm = 'PM';
+                    document.body.classList.add('light'); // Set background color to black
+                    timerElement.classList.add('tim_light'); // Set text color to white
+                } else {
+                    am_pm = 'AM';
+                    document.body.classList.add('dark'); // Set background color to black
+                    timerElement.classList.add('tim_dark'); // Set text color to white
+                }
+
+                if (hours == 0) {
+                    hours = 12; // Midnight case
+                }
+                    hours = String(hours).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                timerElement.textContent = `${hours}:${minutes}:${seconds} ${am_pm}`;
+            }
+            updateTimer();
+            setInterval(updateTimer, 1000);
+
+     </script>
 </body>
 </html>

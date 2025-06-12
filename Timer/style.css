@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .dark {
+            background: radial-gradient(circle at bottom, #18283a, #132335 , #0b1d30 ,#071a2e , #000000);
+    }
+    .light {
+            background: radial-gradient(circle at bottom, #3a1818, #3513131e , #300b0b96 ,#2e070763 , #ffffff);
+    }
+#timer {
+font-family: 'Digital Dismay', monospace;
+      font-size: 100px;
+      letter-spacing: 10px;
+}
+.tim_dark {
+          color: #ffffff;
+      text-shadow:
+        0 0 5px #00bfff,
+        0 0 10px #00bfff,
+        0 0 20px #00bfff,
+        0 0 40px #007acc,
+        0 0 80px #007acc;
+}
+.tim_light {
+          color: #000000;
+      text-shadow:
+        0 0 5px #ff4500,
+        0 0 10px #ff4500,
+        0 0 20px #ff4500,
+        0 0 40px #ff6347,
+        0 0 80px #ff6347;
+}
