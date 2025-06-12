@@ -36,9 +36,20 @@ body {
     border-radius: 5px;
     font-size: 1.5rem;
 }
+.disp {
+    position: relative;
+
+}
+#answer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    padding: 10px;
+    width: 100%;
+}
 .main .disp #display {
     width: 100%;
-    height: 50px;
     background: #fff;
     border-radius: 5px;
     padding: 10px;
@@ -54,7 +65,7 @@ body {
 }
 @media only screen and (min-width: 550px) {
     .main {
-        width: 450px;
+        width: 500px;
         height: 500px;
     }
 }

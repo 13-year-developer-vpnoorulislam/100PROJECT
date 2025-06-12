@@ -10,15 +10,17 @@
 <body>
     <div class="main">
         <div class="disp">
-            <input placeholder="0" type="text" id="display" disabled>
-            <hr style="width: 100%; margin: 15px 0px 15px;"/>
+            <textarea placeholder="0" type="text" id="display" disabled></textarea>
+            <span id="answer"></span>
         </div>
+            <hr style="width: 100%; margin: 15px 0px 15px;"/>
         <div class="btn">
             <div class="up">
             <button onclick="inp('(')">(</button>
             <button onclick="inp(')')">)</button>
             <button onclick="inp('%')">%</button>
-            <button onclick="clear()">AC</button>
+            <button onclick="ac()">AC</button>
+            <button onclick="ce()">CE</button>
             </div>
             <div class="numpad">
             <button onclick="inp(1)">1</button>
@@ -44,11 +46,32 @@
     </div>
     <script>
         let display = document.getElementById("display");
+        let answer = document.getElementById("answer");
+        let isAnswerVisible = false;
+        function evalute(){
+            answer.style.display = 'none';
+            display.value = eval(display.value.replace(/x/g, '*').replace(/÷/g, '/'));
+            isAnswerVisible = true;
+        }
         function inp(value) {
             display.value += value;
+            answer.innerText = `Ans: ${(eval(display.value.replace(/x/g, '*').replace(/÷/g, '/')))}`;
+            if (isAnswerVisible) {
+            answer.style.display = 'block';
+                isAnswerVisible = false;
+            }
         }
-        function evalute(){
-            alert(eval(display.value.replace(/x/g, '*').replace(/÷/g, '/')));
+        function ac() {
+            display.value = '';
+            answer.innerText = '';
+        }
+        function ce() {
+            display.value = display.value.slice(0, -1);
+            if (display.value === '') {
+                answer.innerText = '';
+            } else {
+                answer.innerText = `Ans: ${(eval(display.value.replace(/x/g, '*').replace(/÷/g, '/')))}`;
+            }
         }
     </script>
 </body>
