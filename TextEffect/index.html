@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 34px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Effect</h1>
+    <p id="text">|</p>
+    <script>
+let actualText = "Hello World!, This is a simple text effect demonstration.";
+let textElement = document.getElementById("text");
+let i;
+let text = [];
+for (i of actualText){
+    text.push(i);
+}
+let index = 0;
+const textInterval = setInterval(displayText,200);
+function displayText() {
+    textElement.innerHTML += `${text[index]}`;
+    index++;
+     if (text.length == index){
+        alert("Text display completed.");
+         clearInterval(textInterval);
+    }
+}
+    </script>
+</body>
+</html>
