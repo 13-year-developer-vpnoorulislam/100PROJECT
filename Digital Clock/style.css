@@ -16,9 +16,15 @@ body {
             background: radial-gradient(circle at bottom, #3a1818, #3513131e , #300b0b96 ,#2e070763 , #ffffff);
     }
 #timer {
-font-family: 'Digital Dismay', monospace;
+        font-family: 'Digital Dismay', monospace;
       font-size: 100px;
       letter-spacing: 10px;
+}
+@media only screen and (max-width: 600px) {
+    #timer {
+        font-size: 50px;
+        letter-spacing: 5px;
+    }
 }
 .tim_dark {
           color: #ffffff;
