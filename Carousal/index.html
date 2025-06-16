@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Carousel</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .product_group {
+      padding: 20px;
+      width: 50%;
+      display: flex;
+      overflow: auto;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) , 0 0px 10px 8px rgba(0, 0, 0, 0.1), 0 0px 10px 10px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    #prev {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    #next {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .product img {
+      width: 80%;
+    }
+    .product {
+      /* width: 400px;
+      min-width: 200px; */
+      /* height: 300px; */
+      margin-right: 10px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+    }
+    .product img {
+      min-height: 200px;
+      min-width: 250px;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+</head>
+<body>
+<div class="product_group">
+    <button id="prev"><</button>
+    <button id="next">></button>
+    <div class="product 1">
+    <p>Product 1</p>
+<img src="brown_shoe_style_1.png" alt="">
+    </div>
+    <div class="product 2">
+    <p>Product 2</p>     
+<img src="brown_shoe_style_2.png" alt="">
+    </div>
+    <div class="product 3">
+    <p>Product 3</p>     
+<img src="brown_shoe_style_3.png" alt="">
+    </div>
+    <div class="product 4">
+    <p>Product 4</p>     
+<img src="brown_shoe_style_4.png" alt="">
+    </div>
+    <div class="product 5">
+    <p>Product 5</p>     
+<img src="brown_shoe_style_1.png" alt="">
+        
+    </div>
+    <div class="product 6">
+    <p>Product 6</p>     
+<img src="brown_shoe_style_1.png" alt="">
+        
+    </div>
+    <div class="product 7">
+    <p>Product 7</p>     
+<img src="brown_shoe_style_1.png" alt="">
+        
+    </div>
+    <div class="product 8">
+    <p>Product 8</p>     
+<img src="brown_shoe_style_1.png" alt="">
+        
+    </div>
+    <div class="product 9">
+    <p>Product 9</p>     
+<img src="brown_shoe_style_1.png" alt="">
+        
+    </div>
+</div>
+<script>
+  const productGroup = document.querySelector('.product_group');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+
+  let scrollAmount = 0;
+
+  prevButton.addEventListener('click', () => {
+    // productGroup.scrollLeft -= 200; // Adjust the scroll amount as needed
+    productGroup.scrollBy({
+        left: -200, // Adjust the scroll amount as needed
+        behavior: 'smooth' // Smooth scrolling
+    });
+  });
+  nextButton.addEventListener('click', () => {
+    // productGroup.scrollLeft += 200; // Adjust the scroll amount as needed
+    productGroup.scrollBy({
+        left: +200, // Adjust the scroll amount as needed
+        behavior: 'smooth' // Smooth scrolling
+    });
+ });
+    </script>
+</body>
+</html>
